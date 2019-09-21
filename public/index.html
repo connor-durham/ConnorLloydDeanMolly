@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font for logo (font-family: 'Vollkorn SC', serif;)-->
+    <link href="https://fonts.googleapis.com/css?family=Volkhov&display=swap" rel="stylesheet">
+    <!--Font for body (font-family: 'Crimson Text', serif;)-->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../public/styles/styles.css">
+    <title>Beer Frontier</title>
+</head>
+<body class="light-green lighten-4">
+   
+  
+        <nav>
+            <div class="nav-wrapper  green darken-1">
+                <a href="/" class="brand-logo">Beer Frontier</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                <li><a href="/maps">Find your beer</a></li>
+                <li><a href="/favorites">Favorites</a></li>
+                </ul>
+            </div>
+        </nav>
+    
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/maps">Find your beer</a></li>
+            <li><a href="/favorites">Favorites</a></li>
+        </ul>
+
+        <div class="container z-depth-5"> 
+            <div class="row">
+                <div class="parallax-container">
+                    <div class="parallax"><img src="../public/images/beer2.jpg"></div>
+                </div>
+                <div class="section green darken-2">
+                    <div class="row container">
+                    <h2 class="header white-text">Beer Frontier: About Us</h2>
+                    <p class="white-text">Created by a student team from UCF Coding Bootcamp, Beer Frontier is a web application that will elevate your night out to the next level. 
+                        Essentially, Beer Frontier allows the user to find different types of beer in their area by searching by beer name, brewery name, location, ingredients, events, etc.
+                        Frontier is completely mobile compatible due to integrating Materialize CSS into its programming allowing the user to find their beers on the go.</p>
+                    </div>
+                </div>
+                <div class="parallax-container">
+                    <div class="parallax"><img src="../public/images/beer1.jpg"></div>
+                </div>
+            </div>    
+        </div>
+    
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript">
+     $(document).ready(function(){
+    $('.sidenav').sidenav();
+    $('.parallax').parallax();
+  });
+</script>
+</body>
+</html>
