@@ -95,6 +95,10 @@
      $(document).ready(function(){
     $('.sidenav').sidenav();
     $('.parallax').parallax();
+
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+    });
   });
 </script>
 </body>
