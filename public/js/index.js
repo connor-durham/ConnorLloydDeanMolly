@@ -98,7 +98,7 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-$("#search-submit").on("click", function(e) {
+$("#submit-search").on("click", function(e) {
   e.preventDefault();
 
   // eslint-disable-next-line prettier/prettier
