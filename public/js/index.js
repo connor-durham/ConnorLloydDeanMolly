@@ -101,9 +101,8 @@ $exampleList.on("click", ".delete", handleDeleteBtnClick);
 $("#search-submit").on("click", function(e) {
   e.preventDefault();
 
-  var beer = $("#search-bar")
-    .val()
-    .trim();
+  // eslint-disable-next-line prettier/prettier
+  var beer = $("#search-bar").val().trim();
 
   var queryUrl =
     "http://api.brewerydb.com/v2/" +
