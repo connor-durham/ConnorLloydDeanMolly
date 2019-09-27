@@ -98,7 +98,7 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-$("#search-bar").on("click", function(e) {
+$("#search-submit").on("click", function(e) {
   e.preventDefault();
 
   var beer = $("#search-bar")
