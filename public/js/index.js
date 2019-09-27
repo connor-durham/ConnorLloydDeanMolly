@@ -105,7 +105,7 @@ $("#submit-search").on("click", function(e) {
   var beer = $("#search-bar").val().trim();
 
   var queryUrl =
-    "http://api.brewerydb.com/v2/" +
+    "https://api.brewerydb.com/v2/" +
     beer +
     "/?key=7aed8b39d23007c4acc04ff75f4a0d6e";
 
