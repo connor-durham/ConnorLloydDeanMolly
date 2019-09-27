@@ -13,3 +13,7 @@ p{
 .page-footer {
   padding-top: 0px;
 }
+
+#map {
+  height: 500px;
+}
