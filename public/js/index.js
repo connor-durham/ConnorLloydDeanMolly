@@ -97,3 +97,25 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+$("#search-bar").on("click", function(e) {
+  e.preventDefault();
+
+  var beer = $("#search-bar")
+    .val()
+    .trim();
+
+  var queryUrl =
+    "http://api.brewerydb.com/v2/" +
+    beer +
+    "/?key=7aed8b39d23007c4acc04ff75f4a0d6e";
+
+  console.log(beer);
+
+  $.ajax({
+    url: queryUrl,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
+});
