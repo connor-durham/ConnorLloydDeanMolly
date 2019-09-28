@@ -1,5 +1,3 @@
-import { request } from "http";
-
 // // Get references to page elements
 // var $exampleText = $("#example-text");
 // var $exampleDescription = $("#example-description");
@@ -120,9 +118,8 @@ $("#submit-search").on("click", function(e) {
     lat = response.data[0].breweries[0].locations[0].latitude;
     lon = response.data[0].breweries[0].locations[0].longitude;
 
-    globalScope = response.data[0].breweries[0].locations[0].name
-    initMap();
-
+    globalScope = response.data[0].breweries[0].locations[0].name;
+    google.maps.event.trigger(map, "resize");
   });
 });
 
