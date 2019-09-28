@@ -1,5 +1,3 @@
-import { mapFinderOptions } from "sequelize/types/lib/utils";
-
 // // Get references to page elements
 // var $exampleText = $("#example-text");
 // var $exampleDescription = $("#example-description");
