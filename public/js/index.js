@@ -115,6 +115,8 @@ $("#submit-search").on("click", function(e) {
     method: "GET"
   }).then(function(response) {
     console.log(response.data[0].breweries[0].locations[0]);
+    lat = response.data[0].breweries[0].locations[0].latitude;
+    lon = response.data[0].breweries[0].locations[0].longitude;
   });
 });
 
