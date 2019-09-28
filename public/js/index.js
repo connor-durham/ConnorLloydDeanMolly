@@ -1,3 +1,5 @@
+import { request } from "http";
+
 // // Get references to page elements
 // var $exampleText = $("#example-text");
 // var $exampleDescription = $("#example-description");
@@ -117,7 +119,10 @@ $("#submit-search").on("click", function(e) {
     console.log(response.data[0].breweries[0].locations[0]);
     lat = response.data[0].breweries[0].locations[0].latitude;
     lon = response.data[0].breweries[0].locations[0].longitude;
-    google.maps.event.trigger(map, "resize");
+
+    request.query = response.data[0].breweries[0].locations[0].name
+    initMap();
+
   });
 });
 
