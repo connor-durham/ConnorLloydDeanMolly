@@ -117,6 +117,7 @@ $("#submit-search").on("click", function(e) {
     console.log(response.data[0].breweries[0].locations[0]);
     lat = response.data[0].breweries[0].locations[0].latitude;
     lon = response.data[0].breweries[0].locations[0].longitude;
+    google.maps.event.trigger(map, "resize");
   });
 });
 
