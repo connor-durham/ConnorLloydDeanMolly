@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/styles/styles.css">
+    
     <title>Beer Frontier</title>
 </head>
 <body class="light-green lighten-4">
@@ -87,14 +88,57 @@
 
 
 <script> 
-    function initMap() {
-        const start = {lat: 41.8781, lng: -87.6298};
-        map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: start
-        });
-    } 
-    let map = null;
+    // function initMap() {
+    //     const start = {lat: 41.8781, lng: -87.6298};
+    //     map = new google.maps.Map(document.getElementById('map'), {
+    //     zoom: 13,
+    //     center: start
+    //     });
+    // } 
+    // let map = null;
+
+
+var map;
+var service;
+var infowindow;
+
+function initMap() {
+  var sydney = new google.maps.LatLng(-33.867, 151.195);
+
+  infowindow = new google.maps.InfoWindow();
+
+  map = new google.maps.Map(
+      document.getElementById('map'), {center: sydney, zoom: 15});
+
+  var request = {
+    query: 'Museum of Contemporary Art Australia',
+    fields: ['name', 'geometry'],
+  };
+
+  service = new google.maps.places.PlacesService(map);
+
+  service.findPlaceFromQuery(request, function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+
+      map.setCenter(results[0].geometry.location);
+    }
+  });
+}
+
+function createMarker(place) {
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
 </script>
 
 
@@ -106,8 +150,9 @@
     $('.parallax').parallax();
   });
 </script>
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtOL7w2a5vWUMg9hzxWu4dBPUBadcDlTM&callback=initMap"
- async defer></script>
+ <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtOL7w2a5vWUMg9hzxWu4dBPUBadcDlTM&callback=initMap"
+ async defer></script> -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtOL7w2a5vWUMg9hzxWu4dBPUBadcDlTM&libraries=places&callback=initMap" async defer></script>
  <script src="/js/index.js"></script>
 </body>
 </html>
