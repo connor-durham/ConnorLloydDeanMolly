@@ -114,7 +114,7 @@ $("#submit-search").on("click", function(e) {
     url: queryUrl,
     method: "GET"
   }).then(function(response) {
-    console.log(response.data[0].breweries.locations[0]);
+    console.log(response.data[0].breweries[0].locations[0]);
   });
 });
 
