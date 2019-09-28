@@ -1,3 +1,5 @@
+import { mapFinderOptions } from "sequelize/types/lib/utils";
+
 // // Get references to page elements
 // var $exampleText = $("#example-text");
 // var $exampleDescription = $("#example-description");
@@ -119,7 +121,8 @@ $("#submit-search").on("click", function(e) {
     lon = response.data[0].breweries[0].locations[0].longitude;
 
     globalScope = response.data[0].breweries[0].locations[0].name;
-    google.maps.event.trigger(map, "resize");
+    map.setCenter({lat, lng: lon}); 
+
   });
 });
 
