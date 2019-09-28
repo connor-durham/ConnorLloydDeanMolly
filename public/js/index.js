@@ -120,7 +120,7 @@ $("#submit-search").on("click", function(e) {
     lat = response.data[0].breweries[0].locations[0].latitude;
     lon = response.data[0].breweries[0].locations[0].longitude;
 
-    request.query = response.data[0].breweries[0].locations[0].name
+    globalScope = response.data[0].breweries[0].locations[0].name
     initMap();
 
   });

@@ -102,6 +102,7 @@
 var map;
 var service;
 var infowindow;
+let globalScope = "Amway Center";
 
 let lat = 28.5383;
 let lon = 81.3792;
@@ -115,7 +116,7 @@ function initMap() {
       document.getElementById('map'), {center: ourLocation, zoom: 15});
 
   var request = {
-    query: 'Amway Center',
+    query: globalScope,
     fields: ['name', 'geometry'],
   };
 
