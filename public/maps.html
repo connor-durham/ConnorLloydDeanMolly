@@ -107,12 +107,12 @@ let lat = 28.5383;
 let lon = 81.3792;
 
 function initMap() {
-  var orlando = new google.maps.LatLng(lat, lon);
+  var ourLocation = new google.maps.LatLng(lat, lon);
 
   infowindow = new google.maps.InfoWindow();
 
   map = new google.maps.Map(
-      document.getElementById('map'), {center: orlando, zoom: 15});
+      document.getElementById('map'), {center: ourLocation, zoom: 15});
 
   var request = {
     query: 'Amway Center',
