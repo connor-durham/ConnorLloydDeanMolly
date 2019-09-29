@@ -1,14 +1,24 @@
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    }
-  });
-  User.associate = function(models) {
-    User.hasMany(models.Favorites, {
-      onDelete: "cascade"
-    });
-  };
-  return User;
-};
+const mongoose = require('mongoose');
+
+const UserSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+const User = mongoose.model('User', UserSchema);
+
+module.exports = User;
