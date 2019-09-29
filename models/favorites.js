@@ -17,12 +17,12 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  Favorites.associate = function(models) {
-    Favorites.belongsTo(models.User, {
-      foreignKey: {
-        allowNull: false
-      }
-    });
-  };
+  // Favorites.associate = function(models) {
+  //   Favorites.belongsTo(models.User, {
+  //     foreignKey: {
+  //       allowNull: false
+  //     }
+  //   });
+  // };
   return Favorites;
 };
