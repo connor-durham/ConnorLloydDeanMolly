@@ -13,7 +13,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/favorites.html"));
   });
   app.get("/signIn", function(req, res) {
-    res.sendFile(path.join(__dirname, "../../loginApp/views/login.ejs"));
+    res.render(path.join(__dirname, "../../loginApp/views/login.ejs"));
   });
   app.get("/newMember", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/newmember.html"));
