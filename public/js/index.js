@@ -144,7 +144,7 @@ $("#submit-search").on("click", function(e) {
                             <div id="siteNotice">
                                 <h1 id="firstHeading" class="firstHeading">${beer}</h1>
                                      <div id="bodyContent">
-                                        <p><b>${beer}</b>The website is available here <a href=${webSite}>:)</a></p>
+                                        <p><a href=${webSite}>Click here to visit their website</a></p>
                                         <p> The address is ${address} </p>  
                                         <p> The phone number is ${phone} </p>
                                      </div>
