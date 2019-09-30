@@ -99,7 +99,10 @@
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 $("#submit-search").on("click", function(e) {
+
   e.preventDefault();
+
+  initMap()
 
   // eslint-disable-next-line prettier/prettier
   var beer = $("#search-bar").val().trim();
@@ -133,6 +136,7 @@ $("#submit-search").on("click", function(e) {
 
     marker.setMap(map);
 
+    $("#search-bar").empty()
 
   });
 });
