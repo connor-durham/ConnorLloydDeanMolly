@@ -118,13 +118,15 @@ $("#submit-search").on("click", function(e) {
     lat = response.data[0].breweries[0].locations[0].latitude;
     lon = response.data[0].breweries[0].locations[0].longitude;
 
-    let LatLon = {lat: lat, lon: lon}
+
+    var myLatlng = new google.maps.LatLng(lat,lon);
+
 
     globalScope = response.data[0].breweries[0].locations[0].name;
     map.setCenter({lat, lng: lon}); 
 
     var marker = new google.maps.Marker({
-      position: LatLon,
+      position: myLatlng,
       map: map,
       title: globalScope
     });
