@@ -140,16 +140,16 @@ $("#submit-search").on("click", function(e) {
 
     marker.setMap(map);
 
-    var contentString = '<div id="content">'+
-    '<div id="siteNotice">'+
-    '</div>'+
-    '<h1 id="firstHeading" class="firstHeading">${beer}</h1>'+
-    '<div id="bodyContent">'+
-    '<p><b>${beer}</b>The website is available here <a href=${webSite}>'+
-    '</a> </p>'+ '<p> The address is ${address} </p>' + '<p> The phone number is ${phone} </p>'
-    '</p>'+
-    '</div>'+
-    '</div>';
+    var contentString = `<div id="content">
+                            <div id="siteNotice">
+                                <h1 id="firstHeading" class="firstHeading">${beer}</h1>
+                                     <div id="bodyContent">
+                                        <p><b>${beer}</b>The website is available here <a href=${webSite}>:)</a></p>
+                                        <p> The address is ${address} </p>  
+                                        <p> The phone number is ${phone} </p>
+                                     </div>
+                            </div>
+                           </div>`
 
     var infowindow = new google.maps.InfoWindow({
       content: contentString
