@@ -118,8 +118,19 @@ $("#submit-search").on("click", function(e) {
     lat = response.data[0].breweries[0].locations[0].latitude;
     lon = response.data[0].breweries[0].locations[0].longitude;
 
+    let LatLon = {lat: lat, lon: lon}
+
     globalScope = response.data[0].breweries[0].locations[0].name;
     map.setCenter({lat, lng: lon}); 
+
+    var marker = new google.maps.Marker({
+      position: LatLon,
+      map: map,
+      title: globalScope
+    });
+
+    marker.setMap(map);
+
 
   });
 });
