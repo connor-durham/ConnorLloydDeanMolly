@@ -1,7 +1,3 @@
-$(document).ready(function(){
-  $('.sidenav').sidenav();
-  $('.parallax').parallax();
-  getFavorites();
 
   // Our new favorites will go inside the favoritesCfavoritesContainer
   var favoritesContainer = $(".collection");
@@ -59,4 +55,4 @@ $(document).ready(function(){
     // newRow.data("favorite", favorite);
     return newRow;
   }
-});
+
