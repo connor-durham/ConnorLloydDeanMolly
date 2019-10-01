@@ -48,7 +48,7 @@ $("#submit-search").on("click", function(e) {
 
     var contentString = `<div id="content">
                             <div id="siteNotice">
-                                <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons" id="favoriteButton">favorite</i>  
+                                <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons" id="favoriteButton" onclick="M.toast({html: 'Added to favorites'})">favorite</i>  
                                 <div id="bodyContent">
                                   <p>This brewery makes: ${beer}</p>
                                   <p><a href=${webSite}>Click here to visit their website</a></p>
@@ -70,7 +70,6 @@ $("#submit-search").on("click", function(e) {
     $("#search-bar").empty()
 
     $("#favoriteButton").on("click", function(event) {
-      M.toast({html: 'Added to favorites'});
       event.preventDefault();
         var favorite = {
           beerName: beer,

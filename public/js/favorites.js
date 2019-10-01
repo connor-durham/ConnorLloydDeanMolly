@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
   // Our new favorites will go inside the favoritesCfavoritesContainer
   var favoritesContainer = $(".collection");
   // Adding event listeners for deleting, editing, and adding favorites
@@ -55,4 +55,4 @@ $(document).ready(function() {
     newRow.data("favorite", favorite);
     return newRow;
   }
-});
+
