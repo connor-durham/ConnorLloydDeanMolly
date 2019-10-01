@@ -68,6 +68,19 @@ $("#submit-search").on("click", function(e) {
 
 
     $("#search-bar").empty()
+    
+    google.maps.event.addListener(marker, 'click', function() { 
+          var favorite = {
+          beerName: beer,
+          breweryName: breweryName,
+          webSite: webSite,
+          image: image
+        };
+      
+        console.log(favorite)
+    
+        $.post("/api/favorites", favorite);
+    }); 
 
     $("#favoriteButton").on("click", function(event) {
      
