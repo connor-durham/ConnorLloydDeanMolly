@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Get all examples
   app.get("/api/favorites", function(req, res) {
     db.Favorites.findAll({}).then(function(dbFavorites) {
+      console.log(dbFavorites);
       res.json(dbFavorites);
     });
   });

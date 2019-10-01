@@ -49,7 +49,7 @@ $("#submit-search").on("click", function(e) {
     var contentString = `<div id="content">
                             <div id="siteNotice">
                               <div class="row">
-                                <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons" id="favoriteButton" onclick="M.toast({html: 'Added ${breweryName} to favorites'})">favorite</i>
+                                <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons" id="favoriteButton" onclick="M.toast({html: 'Added ${breweryName} to favorites'});postFunction();">favorite</i>
                               </div>    
                                 <div id="bodyContent">
                                   <p>This brewery makes: ${beer}</p>
@@ -71,8 +71,8 @@ $("#submit-search").on("click", function(e) {
 
     $("#search-bar").empty()
 
-    $("#favoriteButton").on("click", function(event) {
-        event.preventDefault();
+    var postFunction = function() {
+      event.preventDefault();
         var favorite = {
           beerName: beer,
           breweryName: breweryName,
@@ -81,9 +81,8 @@ $("#submit-search").on("click", function(e) {
         };
     
         $.post("/api/favorites", favorite);
+    }
         
-      
-    })
   });
 });
 

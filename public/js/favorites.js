@@ -24,6 +24,7 @@ $(document).ready(function() {
   function getFavorites() {
     $.get("/api/favorites", function(data) {
       favorites = data;
+      console.log(favorites);
       initializeRows();
     });
   }
