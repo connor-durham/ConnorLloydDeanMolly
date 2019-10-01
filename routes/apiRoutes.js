@@ -6,7 +6,7 @@ module.exports = function(app) {
     db.Favorites.findAll({}).then(function(dbFavorites) {
       console.log(dbFavorites);
       res.json(dbFavorites);
-    });
+    }).catch(function(err) { return res.json({ error: err});
   });
 
   // Create a new example
