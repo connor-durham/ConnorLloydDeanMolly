@@ -2,7 +2,7 @@
   font-family: 'Vollkorn SC', serif;
   margin-left: 20px;
 }
-.header {
+.header, #firstHeading {
   font-family: 'Vollkorn SC', serif;
 }
 p{
