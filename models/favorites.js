@@ -1,10 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Favorites = sequelize.define("Favorites", {
-    id: {
-      type: DataTypes.UUID,
-      defaultValue: DataTypes.UUIDV4,
-      allowNull: false
-    },
     beerName: {
       type: DataTypes.STRING,
       allowNull: false,
