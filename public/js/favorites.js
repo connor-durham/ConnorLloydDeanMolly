@@ -51,8 +51,8 @@
         </li>
     `;
 
-    newRow.find("a.delete").data("id", favorite.id);
-    newRow.data("favorite", favorite);
+    // newRow.find("a.delete").data("id", favorite.id);
+    // newRow.data("favorite", favorite);
     return newRow;
   }
 
