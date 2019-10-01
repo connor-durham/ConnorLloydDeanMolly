@@ -1,3 +1,7 @@
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+  $('.parallax').parallax();
+  getFavorites();
 
   // Our new favorites will go inside the favoritesCfavoritesContainer
   var favoritesContainer = $(".collection");
@@ -8,7 +12,7 @@
   var favorites = [];
 
   // Getting favorites from database when page loads
-  getFavorites();
+
 
   // This function resets the favorites displayed with new favorites from the database
   function initializeRows() {
@@ -55,4 +59,4 @@
     // newRow.data("favorite", favorite);
     return newRow;
   }
-
+});
