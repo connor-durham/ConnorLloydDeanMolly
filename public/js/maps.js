@@ -70,13 +70,15 @@ $("#submit-search").on("click", function(e) {
     $("#search-bar").empty()
 
     $("#favoriteButton").on("click", function(event) {
-      event.preventDefault();
+     
         var favorite = {
           beerName: beer,
           breweryName: breweryName,
           webSite: webSite,
           image: image
         };
+      
+        console.log(favorite)
     
         $.post("/api/favorites", favorite);
     
