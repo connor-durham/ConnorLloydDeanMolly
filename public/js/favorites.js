@@ -23,9 +23,7 @@ $(document).ready(function() {
   // This function grabs favorites from the database and updates the view
   function getFavorites() {
     $.get("/api/favorites", function(data) {
-      console.log(data)
       favorites = data;
-      console.log(favorites);
       initializeRows();
     });
   }
