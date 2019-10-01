@@ -2,6 +2,7 @@ let webSite;
 let address;
 let phone;
 let breweryName;
+let image;
 
 $("#submit-search").on("click", function(e) {
 
@@ -29,8 +30,8 @@ $("#submit-search").on("click", function(e) {
     webSite = response.data[0].breweries[0].locations[0].website;
     address = response.data[0].breweries[0].locations[0].streetAddress;
     phone = response.data[0].breweries[0].locations[0].phone;
-    breweryName = phone = response.data[0].breweries[0].locations[0].name;
-
+    breweryName = response.data[0].breweries[0].locations[0].name;
+    image = response.data[0].breweries[0].locations[0].name;
     var myLatlng = new google.maps.LatLng(lat,lon);
 
 
@@ -47,13 +48,15 @@ $("#submit-search").on("click", function(e) {
 
     var contentString = `<div id="content">
                             <div id="siteNotice">
-                                <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons btn" id="favoriteButton" onclick="M.toast({html: 'Added ${breweryName} to favorites'})">favorite_border</i>
-                                  <div id="bodyContent">
-                                    <h3>This brewery makes: ${beer}</h3>
-                                    <p><a href=${webSite}>Click here to visit their website</a></p>
-                                    <p> Address: ${address} </p>  
-                                    <p> Phone Number: ${phone} </p>
-                                  </div>
+                              <div class="row">
+                                <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons" id="favoriteButton" onclick="M.toast({html: 'Added ${breweryName} to favorites'})">favorite</i>
+                              </div>    
+                                <div id="bodyContent">
+                                  <p>This brewery makes: ${beer}</p>
+                                  <p><a href=${webSite}>Click here to visit their website</a></p>
+                                  <p> Address: ${address} </p>  
+                                  <p> Phone Number: ${phone} </p>
+                                </div>
                             </div>
                           </div>`
 
@@ -71,9 +74,10 @@ $("#submit-search").on("click", function(e) {
     $("#favoriteButton").on("click", function(event) {
         event.preventDefault();
         var favorite = {
-          beerName: req.body.beer,
-          breweryName: req.body.breweryName,
-          webSite: req.body.webSite
+          beerName: beer,
+          breweryName: breweryName,
+          webSite: webSite,
+          image: image
         };
     
         $.post("/api/favorites", favorite);
