@@ -1,4 +1,4 @@
-var db = require("./models");
+var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
@@ -9,7 +9,7 @@ module.exports = function(app) {
   });
 
   // Create a new example
-  app.post("/api/maps", function(req, res) {
+  app.post("/api/favorites", function(req, res) {
     db.Favorites.create({
       beerName: req.body.beer,
       breweryName: req.body.breweryName,

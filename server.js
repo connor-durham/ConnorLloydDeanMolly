@@ -1,10 +1,9 @@
 require("dotenv").config();
 var express = require("express");
 
+var db = require("./models");
 var app = express();
 var PORT = process.env.PORT || 3000;
-
-var db = require("./models");
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -12,8 +11,8 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
-require("./routes/apiRoutes.js")(app);
-require("./routes/htmlRoutes.js")(app);
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
 
