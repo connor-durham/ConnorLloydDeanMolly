@@ -15,14 +15,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     webSite: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1, 140]
       }
     },
     image: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [1, 200]
