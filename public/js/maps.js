@@ -46,6 +46,21 @@ $("#submit-search").on("click", function(e) {
 
     marker.setMap(map);
 
+    let infoSender = function() {
+     
+      var favorite = {
+        beerName: beer,
+        breweryName: breweryName,
+        webSite: webSite,
+        image: image
+      };
+    
+      console.log(favorite)
+  
+      $.post("/api/favorites", favorite);
+  
+  };
+
     var contentString = `<div id="content">
                             <div id="siteNotice">
                                 <h2 id="firstHeading" class="firstHeading">${breweryName}</h2><i class="material-icons" id="favoriteButton" onclick="M.toast({html: 'Added to favorites'}); infoSender">favorite</i>  
@@ -68,21 +83,6 @@ $("#submit-search").on("click", function(e) {
 
 
     $("#search-bar").empty()
-
-    let infoSender = function() {
-     
-        var favorite = {
-          beerName: beer,
-          breweryName: breweryName,
-          webSite: webSite,
-          image: image
-        };
-      
-        console.log(favorite)
-    
-        $.post("/api/favorites", favorite);
-    
-    };
       
         
   });
