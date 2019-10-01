@@ -46,7 +46,7 @@ $("#submit-search").on("click", function(e) {
 
     marker.setMap(map);
 
-    let infoSender = function() {
+    function infoSender() {
      
       var favorite = {
         beerName: beer,
