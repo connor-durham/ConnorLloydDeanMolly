@@ -4,6 +4,22 @@ let phone;
 let breweryName;
 let image;
 
+function infoSender() {
+     
+  var favorite = {
+    beerName: beer,
+    breweryName: breweryName,
+    webSite: webSite,
+    image: image
+  };
+
+  console.log(favorite)
+
+  $.post("/api/favorites", favorite);
+
+};
+
+
 $("#submit-search").on("click", function(e) {
 
   e.preventDefault();
@@ -45,21 +61,6 @@ $("#submit-search").on("click", function(e) {
     });
 
     marker.setMap(map);
-
-    function infoSender() {
-     
-      var favorite = {
-        beerName: beer,
-        breweryName: breweryName,
-        webSite: webSite,
-        image: image
-      };
-    
-      console.log(favorite)
-  
-      $.post("/api/favorites", favorite);
-  
-  };
 
     var contentString = `<div id="content">
                             <div id="siteNotice">
