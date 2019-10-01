@@ -19,13 +19,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [1, 140]
-      },
-      image: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-        validate: {
-          len: [1, 200]
-        }
+      }
+    },
+    image: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        len: [1, 200]
+      }
     }
   });
 
